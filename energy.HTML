@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Energy Tycoon Prototype</title>
+<style>
+  body { font-family: sans-serif; background-color: #222; color: white; display: flex; flex-direction: column; align-items: center; }
+  .grid { display: grid; grid-template-columns: repeat(5, 64px); grid-template-rows: repeat(5, 64px); gap: 4px; margin-bottom: 20px; }
+  .plot { width: 64px; height: 64px; text-align: center; line-height: 64px; font-weight: bold; color: white; cursor: pointer; user-select: none; }
+  .empty { background-color: #7cfc00; }       /* light green */
+  .generator { background-color: #ffa500; }  /* orange */
+  .battery { background-color: #1e90ff; }    /* blue */
+  .seller { background-color: #32cd32; }     /* green */
+  .button { padding: 10px 20px; margin: 5px; background-color: #444; border: none; color: white; font-weight: bold; cursor: pointer; }
+  .button:hover { background-color: #666; }
+</style>
+</head>
+<body>
+
+<h1>Energy Tycoon Prototype</h1>
+
+<div class="grid">
+  <div class="plot empty"></div>
+  <div class="plot generator">Coal</div>
+  <div class="plot battery">Small Battery</div>
+  <div class="plot seller">Office</div>
+  <div class="plot empty"></div>
+
+  <div class="plot generator">Fusion</div>
+  <div class="plot generator">Tokamak</div>
+  <div class="plot battery">Ultra Battery</div>
+  <div class="plot seller">Big Bank</div>
+  <div class="plot empty"></div>
+
+  <div class="plot empty"></div>
+  <div class="plot generator">Arc Reactor</div>
+  <div class="plot battery">Hyper Battery</div>
+  <div class="plot seller">Medium Corp</div>
+  <div class="plot empty"></div>
+
+  <div class="plot empty"></div>
+  <div class="plot generator">Cosmic Rad</div>
+  <div class="plot battery">Galactic Battery</div>
+  <div class="plot seller">Galactic Bank</div>
+  <div class="plot empty"></div>
+
+  <div class="plot empty"></div>
+  <div class="plot empty"></div>
+  <div class="plot empty"></div>
+  <div class="plot empty"></div>
+  <div class="plot empty"></div>
+</div>
+
+<div>
+  <button class="button" id="sellBtn">Sell Energy</button>
+  <button class="button" id="upgradeBtn">Upgrade Selected</button>
+  <button class="button" id="discardBtn">Discard Selected</button>
+</div>
+
+<script>
+  let selectedPlot = null;
+  const plots = document.querySelectorAll('.plot');
+
+  plots.forEach(plot => {
+    plot.addEventListener('click', () => {
+      if (selectedPlot) selectedPlot.style.border = 'none';
+      selectedPlot = plot;
+      selectedPlot.style.border = '3px solid yellow';
+    });
+  });
+
+  document.getElementById('sellBtn').addEventListener('click', () => {
+    alert("Energy sold! (Placeholder)");
+  });
+
+  document.getElementById('upgradeBtn').addEventListener('click', () => {
+    if(selectedPlot) alert(selectedPlot.textContent + " upgraded! (Placeholder)");
+  });
+
+  document.getElementById('discardBtn').addEventListener('click', () => {
+    if(selectedPlot) {
+      selectedPlot.className = 'plot empty';
+      selectedPlot.textContent = '';
+      selectedPlot.style.border = 'none';
+      selectedPlot = null;
+    }
+  });
+</script>
+
+</body>
+</html>
