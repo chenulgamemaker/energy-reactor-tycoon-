@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Energy Tycoon</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>⚡ Quantum Energy Tycoon</h1>
+            <div class="stats">
+                <div class="money">💰 $<span id="money">10000</span></div>
+                <div class="power">⚡ <span id="power">0</span> MW</div>
+                <div class="income">📈 +$<span id="income">0</span>/sec</div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="shop-panel">
+                <h3>🛒 Buy Generators</h3>
+                <div id="generator-shop" class="shop-items">
+                    <!-- Generator buttons will be added here -->
+                </div>
+                
+                <h3>🔧 Upgrade Generators</h3>
+                <div id="upgrade-shop" class="shop-items">
+                    <!-- Upgrade buttons will be added here -->
+                </div>
+            </div>
+            
+            <div class="game-grid">
+                <div class="grid-container" id="grid">
+                    <!-- 10x10 grid will be generated here -->
+                </div>
+            </div>
+            
+            <div class="info-panel">
+                <h3>📊 Generator Info</h3>
+                <div id="generator-info">
+                    Click on a generator to see details
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/generators.js"></script>
+    <script src="js/economy.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
